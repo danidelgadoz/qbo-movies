@@ -1,0 +1,13 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ movie.title }}</mat-card-title>
+    <mat-card-subtitle>{{ movie.premiere }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <img mat-card-image src="{{ movie.posterImage }}" alt="">
+
+  <mat-card-content>
+    <p>{{ movie.overview }}</p>
+  </mat-card-content>
+</mat-card>
