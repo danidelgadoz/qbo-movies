@@ -7,6 +7,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MovieCardComponent } from './movie-card/movie-card.component';
+import { MovieCatalogComponent } from './movie-catalog/movie-catalog.component';
 
 const MATERIAL_MODULES = [
   MatCardModule,
@@ -16,7 +17,8 @@ const MATERIAL_MODULES = [
 @NgModule({
   declarations: [
     AppComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    MovieCatalogComponent
   ],
   imports: [
     BrowserModule,
