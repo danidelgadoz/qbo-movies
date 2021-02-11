@@ -1,3 +1,7 @@
+<div *ngIf="errorOcurred==true">
+  {{ errorMessage }}
+</div>
+
 <app-movie-card
   *ngFor="let item of myMovies"
   [movie]="item">
