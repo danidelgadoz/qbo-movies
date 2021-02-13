@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { RouterModule } from '@angular/router';
 
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
@@ -34,6 +35,13 @@ const MATERIAL_MODULES = [
     BrowserAnimationsModule,
     HttpClientModule,
     FlexLayoutModule,
+    RouterModule.forRoot([
+      { path: 'movies', component: MovieCatalogComponent },
+      { path: 'movies/:id', component: MovieDetailComponent },
+      { path: 'welcome', component: WelcomeComponent },
+      { path: '', redirectTo: 'movies', pathMatch: 'full' },
+      { path: '**', redirectTo: 'welcome' },
+    ]),
     ...MATERIAL_MODULES
   ],
   providers: [
