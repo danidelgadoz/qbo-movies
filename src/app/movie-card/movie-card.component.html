@@ -8,6 +8,9 @@
   <img mat-card-image src="{{ movie.posterImage }}" alt="">
 
   <mat-card-content>
-    <p>{{ movie.overview }}</p>
+    <p>
+      {{ movie.overview | slice:0:200 }}
+      {{ movie.overview.length > 200 ? '...' : '' }}
+    </p>
   </mat-card-content>
 </mat-card>
