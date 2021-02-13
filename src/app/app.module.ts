@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MovieCatalogComponent } from './movie-catalog/movie-catalog.component';
 import { AppInterceptor } from './app.interceptor';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 
 const MATERIAL_MODULES = [
   MatCardModule,
@@ -23,7 +24,8 @@ const MATERIAL_MODULES = [
   declarations: [
     AppComponent,
     MovieCardComponent,
-    MovieCatalogComponent
+    MovieCatalogComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
