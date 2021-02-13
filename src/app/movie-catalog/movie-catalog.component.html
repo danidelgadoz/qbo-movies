@@ -2,7 +2,14 @@
   {{ errorMessage }}
 </div>
 
-<app-movie-card
-  *ngFor="let item of myMovies"
-  [movie]="item">
-</app-movie-card>
+<div fxLayout="row wrap" fxLayoutAlign="center">
+
+  <app-movie-card
+    fxFlex.xs="80"
+    fxFlex.sm="40"
+    fxFlex="25"
+    *ngFor="let item of myMovies"
+    [movie]="item">
+  </app-movie-card>
+
+</div>
