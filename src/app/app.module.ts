@@ -15,6 +15,7 @@ import { MovieCatalogComponent } from './movie-catalog/movie-catalog.component';
 import { AppInterceptor } from './app.interceptor';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const MATERIAL_MODULES = [
   MatCardModule,
@@ -28,7 +29,8 @@ const MATERIAL_MODULES = [
     MovieCardComponent,
     MovieCatalogComponent,
     MovieDetailComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -39,8 +41,9 @@ const MATERIAL_MODULES = [
       { path: 'movies', component: MovieCatalogComponent },
       { path: 'movies/:id', component: MovieDetailComponent },
       { path: 'welcome', component: WelcomeComponent },
+      { path: 'not-found', component: NotFoundComponent },
       { path: '', redirectTo: 'movies', pathMatch: 'full' },
-      { path: '**', redirectTo: 'welcome' },
+      { path: '**', redirectTo: 'not-found' },
     ]),
     ...MATERIAL_MODULES
   ],
