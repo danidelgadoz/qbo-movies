@@ -17,6 +17,7 @@ import { AppInterceptor } from './app.interceptor';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { MovieDetailGuard } from './movie-detail.guard';
 
 const MATERIAL_MODULES = [
   MatCardModule,
@@ -41,7 +42,7 @@ const MATERIAL_MODULES = [
     FlexLayoutModule,
     RouterModule.forRoot([
       { path: 'movies', component: MovieCatalogComponent },
-      { path: 'movies/:id', component: MovieDetailComponent },
+      { path: 'movies/:id', component: MovieDetailComponent, canActivate: [MovieDetailGuard] },
       { path: 'welcome', component: WelcomeComponent },
       { path: 'not-found', component: NotFoundComponent },
       { path: '', redirectTo: 'movies', pathMatch: 'full' },
