@@ -13,6 +13,7 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MovieCatalogComponent } from './movie-catalog/movie-catalog.component';
 import { AppInterceptor } from './app.interceptor';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const MATERIAL_MODULES = [
   MatCardModule,
@@ -25,7 +26,8 @@ const MATERIAL_MODULES = [
     AppComponent,
     MovieCardComponent,
     MovieCatalogComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
