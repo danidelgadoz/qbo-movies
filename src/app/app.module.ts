@@ -5,6 +5,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,7 +15,8 @@ import { AppInterceptor } from './app.interceptor';
 
 const MATERIAL_MODULES = [
   MatCardModule,
-  MatButtonModule
+  MatButtonModule,
+  MatToolbarModule
 ];
 
 @NgModule({
