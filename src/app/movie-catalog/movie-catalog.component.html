@@ -9,7 +9,8 @@
     fxFlex.sm="40"
     fxFlex="25"
     *ngFor="let item of myMovies"
-    [movie]="item">
+    [movie]="item"
+    [routerLink]="['/movies', item.id]">
   </app-movie-card>
 
 </div>
