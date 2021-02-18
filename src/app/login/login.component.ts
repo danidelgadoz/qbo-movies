@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  userCredentials = {
+    email: 'admin@example.com',
+    password: '123456',
+  };
+
+  constructor() {
+    setTimeout(() => {
+      this.userCredentials.email = ''
+    }, 3000)
+  }
 
   ngOnInit(): void {
+  }
+
+  login() {
+    console.log('credentials', this.userCredentials)
   }
 
 }

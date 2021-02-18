@@ -2,14 +2,27 @@
      fxLayoutAlign="center center"
      class="login-wrapper">
 
-  <form fxLayout="column">
+  <form fxLayout="column"
+        #myForm="ngForm">
+
     <fieldset>Login</fieldset>
 
-    <input type="text" placeholder="email">
+    <input type="text"
+           placeholder="email"
+           name="email"
+           [(ngModel)]="userCredentials.email"
+           #nameField="ngModel">
 
-    <input type="text" placeholder="password">
+    <input type="text"
+           placeholder="password"
+           name="password"
+           [(ngModel)]="userCredentials.password"
+           #nameField="ngModel">
 
-    <button>Login</button>
+    <button (click)="login()">Login</button>
+
   </form>
+
+  <p>{{ myForm.value | json }}</p>
 
 </div>
