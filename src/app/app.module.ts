@@ -18,6 +18,7 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MovieDetailGuard } from './movie-detail.guard';
+import { LoginComponent } from './login/login.component';
 
 const MATERIAL_MODULES = [
   MatCardModule,
@@ -33,7 +34,8 @@ const MATERIAL_MODULES = [
     MovieCatalogComponent,
     MovieDetailComponent,
     WelcomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

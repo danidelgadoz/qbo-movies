@@ -1,0 +1,20 @@
+.login-wrapper {
+  height: 100vh;
+  width: 100vw;
+
+  form {
+    width: 400px;
+    padding: 24px;
+    border: 1px solid black;
+
+    fieldset {
+      border: none;
+      padding: 0;
+      margin-bottom: 16px;
+    }
+
+    input {
+      margin-bottom: 8px;
+    }
+  }
+}
