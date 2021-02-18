@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Movie } from '../movie-core/movie.interface';
 import { MovieService } from '../movie-core/movie.service';
 
@@ -12,11 +13,18 @@ export class MovieCatalogComponent implements OnInit {
   errorMessage = '';
   errorOcurred = false;
 
-  constructor(private movieService: MovieService) { }
+  constructor(
+    private movieService: MovieService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     // load movies from service...
     this.loadMovies();
+  }
+
+  onNavigateToAddMovie(): void {
+    this.router.navigate(['/movies/add']);
   }
 
   private loadMovies(): void {

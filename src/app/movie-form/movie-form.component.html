@@ -1,0 +1,44 @@
+<form fxLayout="column">
+
+  <mat-form-field appearance="outline">
+    <mat-label>Title</mat-label>
+    <input matInput>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Overview</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Premiere</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Poster Image URL</mat-label>
+    <input matInput>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Genero</mat-label>
+    <mat-select>
+      <mat-option>Comedia</mat-option>
+      <mat-option>Drama</mat-option>
+      <mat-option>Terror</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div fxLayout="row"
+       fxLayoutAlign="end"
+       fxLayoutGap="16px"
+       class="button-actions">
+
+       <button mat-raised-button>RESET</button>
+       <button mat-raised-button color="primary">CREATE</button>
+
+  </div>
+
+</form>

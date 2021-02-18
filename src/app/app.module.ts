@@ -9,6 +9,11 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,12 +25,18 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MovieDetailGuard } from './movie-detail.guard';
 import { LoginComponent } from './login/login.component';
+import { MovieFormComponent } from './movie-form/movie-form.component';
 
 const MATERIAL_MODULES = [
   MatCardModule,
   MatButtonModule,
   MatToolbarModule,
-  MatIconModule
+  MatIconModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatSelectModule
 ];
 
 @NgModule({
@@ -36,7 +47,8 @@ const MATERIAL_MODULES = [
     MovieDetailComponent,
     WelcomeComponent,
     NotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    MovieFormComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +58,7 @@ const MATERIAL_MODULES = [
     FlexLayoutModule,
     RouterModule.forRoot([
       { path: 'movies', component: MovieCatalogComponent },
+      { path: 'movies/add', component: MovieFormComponent },
       { path: 'movies/:id', component: MovieDetailComponent, canActivate: [MovieDetailGuard] },
       { path: 'welcome', component: WelcomeComponent },
       { path: 'not-found', component: NotFoundComponent },
