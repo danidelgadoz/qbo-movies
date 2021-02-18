@@ -18,3 +18,16 @@
     }
   }
 }
+
+// .ng-invalid:not(form).ng-touched {
+//   border: 2px solid red;
+// }
+
+.field-error {
+  border: 2px solid red;
+  margin-bottom: 8px;
+}
+
+.label-error {
+  color: red;
+}

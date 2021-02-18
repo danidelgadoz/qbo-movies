@@ -8,14 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   userCredentials = {
-    email: 'admin@example.com',
-    password: '123456',
+    email: '',
+    password: '',
   };
 
   constructor() {
-    setTimeout(() => {
-      this.userCredentials.email = ''
-    }, 3000)
   }
 
   ngOnInit(): void {

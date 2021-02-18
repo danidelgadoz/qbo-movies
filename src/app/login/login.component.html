@@ -3,26 +3,44 @@
      class="login-wrapper">
 
   <form fxLayout="column"
-        #myForm="ngForm">
+        #myForm="ngForm"
+        (ngSubmit)="myForm.valid && login()">
 
     <fieldset>Login</fieldset>
 
-    <input type="text"
-           placeholder="email"
+    <input type="email"
+           required
+           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+           placeholder="Email"
            name="email"
            [(ngModel)]="userCredentials.email"
-           #nameField="ngModel">
+           [class.field-error]="myForm.submitted && email.invalid"
+           #email="ngModel">
+
+    <div *ngIf="myForm.submitted && email.invalid"
+         class="label-error">Enter a valid email</div>
 
     <input type="text"
-           placeholder="password"
+           required
+           placeholder="Password"
            name="password"
            [(ngModel)]="userCredentials.password"
-           #nameField="ngModel">
+           [class.field-error]="myForm.submitted && password.invalid"
+           #password="ngModel">
 
-    <button (click)="login()">Login</button>
+    <div *ngIf="myForm.submitted && password.invalid"
+         class="label-error">Enter a valid password</div>
+
+    <button type="submit">Login</button>
 
   </form>
 
-  <p>{{ myForm.value | json }}</p>
+  <!-- <p>dirty: {{ email.dirty }}</p>
+  <p>pristine: {{ email.pristine }}</p>
+  <p>touched: {{ email.touched}}</p>
+  <p>untouched: {{ email.untouched }}</p>
+  <p>valid: {{ email.valid }}</p>
+  <p>invalid: {{ email.invalid }}</p>
+  <p>{{ myForm.value | json }}</p> -->
 
 </div>
