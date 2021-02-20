@@ -17,16 +17,11 @@ import {MatSelectModule} from '@angular/material/select';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MovieCardComponent } from './movie/movie-card/movie-card.component';
-import { MovieCatalogComponent } from './movie/movie-catalog/movie-catalog.component';
 import { AppInterceptor } from './app.interceptor';
-import { MovieDetailComponent } from './movie/movie-detail/movie-detail.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { MovieDetailGuard } from './movie-detail.guard';
 import { LoginComponent } from './login/login.component';
-import { MovieFormComponent } from './movie/movie-form/movie-form.component';
-import { MovieComponent } from './movie/movie.component';
+import { MovieModule } from './movie/movie.module';
 
 const MATERIAL_MODULES = [
   MatCardModule,
@@ -43,14 +38,9 @@ const MATERIAL_MODULES = [
 @NgModule({
   declarations: [
     AppComponent,
-    MovieCardComponent,
-    MovieCatalogComponent,
-    MovieDetailComponent,
     WelcomeComponent,
     NotFoundComponent,
     LoginComponent,
-    MovieFormComponent,
-    MovieComponent
   ],
   imports: [
     BrowserModule,
@@ -59,16 +49,8 @@ const MATERIAL_MODULES = [
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
+    MovieModule,
     RouterModule.forRoot([
-      {
-        path: 'movies',
-        component: MovieComponent,
-        children: [
-          { path: '', component: MovieCatalogComponent },
-          { path: 'add', component: MovieFormComponent },
-          { path: ':id', component: MovieDetailComponent, canActivate: [MovieDetailGuard] },
-        ]
-      },
       { path: 'login', component: LoginComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: 'not-found', component: NotFoundComponent },
