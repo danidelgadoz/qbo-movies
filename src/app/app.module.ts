@@ -17,15 +17,15 @@ import {MatSelectModule} from '@angular/material/select';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MovieCardComponent } from './movie-card/movie-card.component';
-import { MovieCatalogComponent } from './movie-catalog/movie-catalog.component';
+import { MovieCardComponent } from './movie/movie-card/movie-card.component';
+import { MovieCatalogComponent } from './movie/movie-catalog/movie-catalog.component';
 import { AppInterceptor } from './app.interceptor';
-import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { MovieDetailComponent } from './movie/movie-detail/movie-detail.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MovieDetailGuard } from './movie-detail.guard';
 import { LoginComponent } from './login/login.component';
-import { MovieFormComponent } from './movie-form/movie-form.component';
+import { MovieFormComponent } from './movie/movie-form/movie-form.component';
 import { MovieComponent } from './movie/movie.component';
 
 const MATERIAL_MODULES = [
