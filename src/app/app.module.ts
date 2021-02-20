@@ -26,6 +26,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { MovieDetailGuard } from './movie-detail.guard';
 import { LoginComponent } from './login/login.component';
 import { MovieFormComponent } from './movie-form/movie-form.component';
+import { MovieComponent } from './movie/movie.component';
 
 const MATERIAL_MODULES = [
   MatCardModule,
@@ -48,7 +49,8 @@ const MATERIAL_MODULES = [
     WelcomeComponent,
     NotFoundComponent,
     LoginComponent,
-    MovieFormComponent
+    MovieFormComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,
@@ -58,9 +60,16 @@ const MATERIAL_MODULES = [
     ReactiveFormsModule,
     FlexLayoutModule,
     RouterModule.forRoot([
-      { path: 'movies', component: MovieCatalogComponent },
-      { path: 'movies/add', component: MovieFormComponent },
-      { path: 'movies/:id', component: MovieDetailComponent, canActivate: [MovieDetailGuard] },
+      {
+        path: 'movies',
+        component: MovieComponent,
+        children: [
+          { path: '', component: MovieCatalogComponent },
+          { path: 'add', component: MovieFormComponent },
+          { path: ':id', component: MovieDetailComponent, canActivate: [MovieDetailGuard] },
+        ]
+      },
+      { path: 'login', component: LoginComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: 'not-found', component: NotFoundComponent },
       { path: '', redirectTo: 'movies', pathMatch: 'full' },

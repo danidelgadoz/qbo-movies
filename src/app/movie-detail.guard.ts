@@ -13,7 +13,7 @@ export class MovieDetailGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    let id = Number(route.url[1].path);
+    let id = Number(route.url[0].path);
 
     if (isNaN(id) || id < 1) {
       alert('Invalid movie ID');
