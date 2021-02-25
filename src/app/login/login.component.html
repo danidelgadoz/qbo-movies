@@ -4,7 +4,7 @@
 
   <form [formGroup]="formLogin" (ngSubmit)="formLogin.valid && login()">
 
-    <fieldset fxLayout="column">
+    <fieldset fxLayout="column" [disabled]="loading">
       <h1>Login</h1>
 
       <mat-form-field appearance="outline">
@@ -21,6 +21,10 @@
 
       <button mat-raised-button type="submit">Login</button>
       <button mat-raised-button type="reset">Reset</button>
+
+      <div fxLayout="row" fxFlexAlign="center">
+        <mat-spinner [diameter]="25" *ngIf="loading"></mat-spinner>
+      </div>
     </fieldset>
 
   </form>

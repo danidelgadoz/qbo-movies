@@ -11,6 +11,7 @@ import { AuthService } from '../core/auth.service';
 })
 export class LoginComponent implements OnInit {
   formLogin: FormGroup;
+  loading = false;
 
   constructor(
     private authService: AuthService,
@@ -27,16 +28,22 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.loading = true;
+
     this.authService
       .loginWithUserCredentials(this.formLogin.value.email, this.formLogin.value.password)
       .subscribe(
         (data) => {
           console.log('success', data)
-          this.router.navigate(['/movies']);
+          // this.router.navigate(['/movies']);
         },
         (error) => {
           console.log('error', error)
         },
+        () => {
+          console.log("el servicio respondio")
+          this.loading = false;
+        }
       );
 
   }
