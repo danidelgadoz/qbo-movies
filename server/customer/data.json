@@ -1,0 +1,44 @@
+[
+  {
+    "id": "100",
+    "title": "Captain America: Civil War",
+    "overview": "Following the events of Age of Ultron, the collective governments of the world pass an act designed to regulate all superhuman activity. This polarizes opinion amongst the Avengers, causing two factions to side with Iron Man or Captain America, which causes an epic battle between former allies.",
+    "premiere": "05/06/2016",
+    "posterImage": "https://www.themoviedb.org/t/p/w1280/rAGiXaUfPzY7CDEyNKUofk3Kw2e.jpg"
+  },
+  {
+    "id": "200",
+    "title": "Thor: The Dark World",
+    "overview": "Thor fights to restore order across the cosmos… but an ancient race led by the vengeful Malekith returns to plunge the universe back into darkness. Faced with an enemy that even Odin and Asgard cannot withstand, Thor must embark on his most perilous and personal journey yet, one that will reunite him with Jane Foster and force him to sacrifice everything to save us all.",
+    "premiere": "11/08/2013",
+    "posterImage": "https://www.themoviedb.org/t/p/w1280/wp6OxE4poJ4G7c0U2ZIXasTSMR7.jpg"
+  },
+  {
+    "id": "300",
+    "title": "Iron Man",
+    "overview": "After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil.",
+    "premiere": "05/02/2008",
+    "posterImage": "https://www.themoviedb.org/t/p/w1280/78lPtwv72eTNqFW9COBYI0dWDJa.jpg"
+  },
+  {
+    "id": "400",
+    "title": "The Incredible Hulk",
+    "overview": "Scientist Bruce Banner scours the planet for an antidote to the unbridled force of rage within him: the Hulk. But when the military masterminds who dream of exploiting his powers force him back to civilization, he finds himself coming face to face with a new, deadly foe.",
+    "premiere": "06/12/2008",
+    "posterImage": "https://www.themoviedb.org/t/p/w1280/gKzYx79y0AQTL4UAk1cBQJ3nvrm.jpg"
+  },
+  {
+    "id": "500",
+    "title": "The Amazing Spider-Man",
+    "overview": "Peter Parker is an outcast high schooler abandoned by his parents as a boy, leaving him to be raised by his Uncle Ben and Aunt May. Like most teenagers, Peter is trying to figure out who he is and how he got to be the person he is today. As Peter discovers a mysterious briefcase that belonged to his father, he begins a quest to understand his parents' disappearance – leading him directly to Oscorp and the lab of Dr. Curt Connors, his father's former partner. As Spider-Man is set on a collision course with Connors' alter ego, The Lizard, Peter will make life-altering choices to use his powers and shape his destiny to become a hero.",
+    "premiere": "07/03/2012",
+    "posterImage": "https://www.themoviedb.org/t/p/w1280/dQ8TOCYgP9pzQvSb1cmaalYqdb5.jpg"
+  },
+  {
+    "id": "600",
+    "title": "Doctor Strange",
+    "overview": "After his career is destroyed, a brilliant but arrogant surgeon gets a new lease on life when a sorcerer takes him under her wing and trains him to defend the world against evil.",
+    "premiere": "11/04/2016",
+    "posterImage": "https://www.themoviedb.org/t/p/w1280/xf8PbyQcR5ucXErmZNzdKR0s8ya.jpg"
+  }
+]
