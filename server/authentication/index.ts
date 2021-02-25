@@ -27,7 +27,7 @@ router.post('/oauth/token', (req, res) => {
             default:
             setTimeout(() => {
                 res.status(200).json(validCredentialsResponse);
-            }, 0)
+            }, 5000)
         }
     }
 });
