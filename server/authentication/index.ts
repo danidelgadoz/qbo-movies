@@ -19,7 +19,7 @@ router.post('/oauth/token', (req, res) => {
             case 'invalid@example.com':
                 setTimeout(() => {
                   res.status(401).json(badCredentialsResponse);
-                }, 5000)
+                }, 1000)
                 break;
             case 'refesh@example.com':
                 const response = Object.assign({}, validCredentialsResponse)
@@ -29,7 +29,7 @@ router.post('/oauth/token', (req, res) => {
             default:
             setTimeout(() => {
                 res.status(200).json(validCredentialsResponse);
-            }, 5000)
+            }, 1000)
         }
     }
 });

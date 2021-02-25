@@ -34,7 +34,7 @@ export class AppInterceptor implements HttpInterceptor {
     // console.log('request', errorResponse)
     switch (errorResponse.status) {
       case 401: // Unauthorized
-        alert('NO AUTHORIZADO')
+        // alert('NO AUTHORIZADO')
         break;
       case 404: // Unauthorized
         // alert('SERVICIO NO ENCONTRADO')
