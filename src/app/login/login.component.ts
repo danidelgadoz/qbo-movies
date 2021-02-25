@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { AuthService } from '../core/auth.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,6 +13,7 @@ export class LoginComponent implements OnInit {
   formLogin: FormGroup;
 
   constructor(
+    private authService: AuthService,
     private router: Router,
     public formBuilder: FormBuilder,
   ) {
@@ -24,8 +27,18 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    console.log(this.formLogin.value)
-    // this.router.navigate(['/movies']);
+    this.authService
+      .loginWithUserCredentials(this.formLogin.value.email, this.formLogin.value.password)
+      .subscribe(
+        (data) => {
+          console.log('success', data)
+          this.router.navigate(['/movies']);
+        },
+        (error) => {
+          console.log('error', error)
+        },
+      );
+
   }
 
 }

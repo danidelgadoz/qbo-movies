@@ -31,19 +31,19 @@ export class AppInterceptor implements HttpInterceptor {
 
   private handleErrorResponse(errorResponse): Observable<HttpEvent<any>> {
     // console.log('error at interceptor', errorResponse);
-    console.log('request', errorResponse)
+    // console.log('request', errorResponse)
     switch (errorResponse.status) {
       case 401: // Unauthorized
-        alert('NO AUTHORIZADO')
+        // alert('NO AUTHORIZADO')
         break;
       case 404: // Unauthorized
-        alert('SERVICIO NO ENCONTRADO')
+        // alert('SERVICIO NO ENCONTRADO')
         break;
       case 500: // Service Unavailable
-        alert('ERROR INTERNO')
+        // alert('ERROR INTERNO')
         break;
       case 503: // Internal Server Error
-        alert('WEB EN MANTENIMEITNO')
+        // alert('WEB EN MANTENIMEITNO')
         break;
       default: // Other Error
     }
