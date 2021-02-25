@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 import { AuthService } from '../core/auth.service';
 
@@ -9,8 +10,9 @@ import { AuthService } from '../core/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   formLogin: FormGroup;
+  loginSuscription: Subscription;
   loading = false;
 
   constructor(
@@ -27,6 +29,10 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngOnDestroy(): void {
+    this.loginSuscription?.unsubscribe();
+  }
+
   onNavigateToRegisterPage(): void {
     this.router.navigate(['/register']);
   }
@@ -34,7 +40,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.loading = true;
 
-    this.authService
+    this.loginSuscription = this.authService
       .loginWithUserCredentials(this.formLogin.value.email, this.formLogin.value.password)
       .subscribe(
         (data) => {

@@ -17,7 +17,9 @@ router.post('/oauth/token', (req, res) => {
     } else {
         switch (req.body.username) {
             case 'invalid@example.com':
-                res.status(401).json(badCredentialsResponse);
+                setTimeout(() => {
+                  res.status(401).json(badCredentialsResponse);
+                }, 5000)
                 break;
             case 'refesh@example.com':
                 const response = Object.assign({}, validCredentialsResponse)
