@@ -7,8 +7,8 @@ const httpResponse = new HttpResponse();
 const auth = new Authorization();
 
 let CUSTOMERS = require("./data");
-
-router.get('/movie/', auth.validateSession, (req, res) => {
+// auth.validateSession
+router.get('/movie/', (req, res) => {
     res.json(CUSTOMERS);
 });
 
