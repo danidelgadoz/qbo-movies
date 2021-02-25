@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,20 +8,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  formLogin: FormGroup;
 
-  userCredentials = {
-    email: '',
-    password: '',
-  };
-
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    public formBuilder: FormBuilder,
+  ) {
+    this.formLogin = this.formBuilder.group({
+      email: ['', [Validators.email, Validators.required]],
+      password: ['', [Validators.required]],
+    });
   }
 
   ngOnInit(): void {
   }
 
   login() {
-    this.router.navigate(['/movies']);
+    console.log(this.formLogin.value)
+    // this.router.navigate(['/movies']);
   }
 
 }

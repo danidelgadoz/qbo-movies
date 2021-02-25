@@ -2,46 +2,27 @@
      fxLayoutAlign="center center"
      class="login-wrapper">
 
-  <form fxLayout="column"
-        #myForm="ngForm"
-        (ngSubmit)="myForm.valid && login()">
+  <form [formGroup]="formLogin" (ngSubmit)="formLogin.valid && login()">
 
-    <fieldset>Login</fieldset>
+    <fieldset fxLayout="column">
+      <h1>Login</h1>
 
-    <input type="email"
-           required
-           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-           placeholder="Email"
-           name="email"
-           [(ngModel)]="userCredentials.email"
-           [class.field-error]="myForm.submitted && email.invalid"
-           #email="ngModel">
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Email" formControlName="email">
 
-    <div *ngIf="myForm.submitted && email.invalid"
-         class="label-error">Enter a valid email</div>
+        <mat-error *ngIf="formLogin.controls['email'].hasError('email')">Invalid Email</mat-error>
+        <mat-error *ngIf="formLogin.controls['email'].hasError('required')">Email is required</mat-error>
+      </mat-form-field>
 
-    <input type="text"
-           required
-           placeholder="Password"
-           name="password"
-           [(ngModel)]="userCredentials.password"
-           [class.field-error]="myForm.submitted && password.invalid"
-           #password="ngModel">
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Password" formControlName="password">
+        <mat-error *ngIf="formLogin.controls['password'].hasError('required')">Password is required</mat-error>
+      </mat-form-field>
 
-    <div *ngIf="myForm.submitted && password.invalid"
-         class="label-error">Enter a valid password</div>
-
-    <button type="submit">Login</button>
-    <button type="reset">Reset</button>
+      <button mat-raised-button type="submit">Login</button>
+      <button mat-raised-button type="reset">Reset</button>
+    </fieldset>
 
   </form>
-
-  <!-- <p>dirty: {{ email.dirty }}</p>
-  <p>pristine: {{ email.pristine }}</p>
-  <p>touched: {{ email.touched}}</p>
-  <p>untouched: {{ email.untouched }}</p>
-  <p>valid: {{ email.valid }}</p>
-  <p>invalid: {{ email.invalid }}</p>
-  <p>{{ myForm.value | json }}</p> -->
 
 </div>
