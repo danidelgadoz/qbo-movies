@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  backendEndpoint: 'http://demo0034835.mockable.io'
 };
