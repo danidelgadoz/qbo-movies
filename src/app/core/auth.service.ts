@@ -27,4 +27,8 @@ export class AuthService {
   isLogged(): boolean {
     return localStorage.getItem('session') ? true : false;
   }
+
+  logout(): void {
+    localStorage.clear();
+  }
 }

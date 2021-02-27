@@ -4,7 +4,7 @@
     <button mat-button [routerLink]="['/welcome']">Home</button>
     <button mat-button [routerLink]="['/movies']">Movies</button>
     <div fxFlex></div>
-    <button mat-button [routerLink]="['/login']">Logout</button>
+    <button mat-button [routerLink]="['/login']" (click)="onClickLogout()">Logout</button>
   </mat-toolbar-row>
 </mat-toolbar>
 
