@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { of, Subscription } from 'rxjs';
 import { map, tap, filter, delay, finalize } from 'rxjs/operators';
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     private authService: AuthService,
     private router: Router,
     public formBuilder: FormBuilder,
+    private snackBar: MatSnackBar,
   ) {
     this.formLogin = this.formBuilder.group({
       email: ['', [Validators.email, Validators.required]],
@@ -53,7 +55,9 @@ export class LoginComponent implements OnInit, OnDestroy {
           // this.router.navigate(['/movies']);
         },
         (error) => {
-          console.log('error', error)
+          this.snackBar.open('Ups! Something went wrong', 'OK', {
+            duration: 3000,
+          });
         },
         () => {
           console.log("el servicio respondio correctamente")
