@@ -51,13 +51,10 @@ export class LoginComponent implements OnInit, OnDestroy {
       )
       .subscribe(
         (data) => {
-          console.log('success', data)
-          // this.router.navigate(['/movies']);
+          this.router.navigate(['/movies']);
         },
         (error) => {
-          this.snackBar.open('Ups! Something went wrong', 'OK', {
-            duration: 3000,
-          });
+          this.handleError(error);
         },
         () => {
           console.log("el servicio respondio correctamente")
@@ -79,6 +76,18 @@ export class LoginComponent implements OnInit, OnDestroy {
       delay(3000),
     )
     .subscribe((data) => console.log(data))
+  }
+
+  handleError (error) {
+    let errorMessage = ''
+    if (error.status === 401) {
+      errorMessage = 'Invalid credentials';
+    } else {
+      errorMessage = 'Ups! Something went wrong';
+    }
+    this.snackBar.open(errorMessage, 'OK', {
+      duration: 3000,
+    });
   }
 
 }
