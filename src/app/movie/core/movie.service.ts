@@ -21,4 +21,15 @@ export class MovieService {
       )
   }
 
+  addMovie(movie: Movie): Observable<Movie> {
+    // console.log('addMovie', movie)
+    return this.http.post<Movie>('http://localhost:3000/api/movie', movie)
+    .pipe(
+      catchError((error) => {
+        console.log('MovieService => addMovie => error', error);
+        return throwError(error.error.code);
+      })
+    );
+  }
+
 }

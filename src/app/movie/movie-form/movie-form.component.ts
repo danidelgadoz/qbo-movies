@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MovieService } from '../core/movie.service';
 
 @Component({
   selector: 'app-movie-form',
@@ -9,7 +11,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class MovieFormComponent implements OnInit {
   movieForm: FormGroup;
 
-  constructor() {
+  constructor(
+    private movieService: MovieService,
+    private snackBar: MatSnackBar,
+  ) {
 
   }
 
@@ -24,7 +29,41 @@ export class MovieFormComponent implements OnInit {
   }
 
   onFormSubmit(): void {
-    console.log('form', this.movieForm.value)
+    // console.log('form', this.movieForm.value)
+    this.movieService
+      .addMovie(this.movieForm.value)
+      .subscribe(
+        (response) => {
+          console.log('response', response);
+          this.snackBar.open('Movie has been created!', 'OK', {
+            duration: 3000,
+          });
+        },
+        (error) => {
+          console.log('MovieFormComponent => onFormSubmit => error', error);
+          this.handleOnCreateMovieError(error);
+        }
+      );
+  }
+
+  handleOnCreateMovieError(error: string) {
+    let errorMessage = ''
+
+    switch (error) {
+      case 'INVALID_PHONE_NUMBER':
+        errorMessage = 'Invalid phone number';
+        break
+      case 'INVALID_EMAIL':
+        errorMessage = 'Invalid email';
+        break
+      default:
+        errorMessage = 'Ups! something went wrong';
+    }
+
+    this.snackBar.open(errorMessage, 'OK', {
+      duration: 3000,
+    });
+
   }
 
 
