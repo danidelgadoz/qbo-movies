@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Movie } from './movie.interface';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../../../src/environments/environment';
 
 const BACKEND_ENDPOINT = environment.backendEndpoint;
 @Injectable({
